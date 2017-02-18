@@ -10,7 +10,7 @@ public class TestaAlteraConta {
 	public static void main(String[] args) {
 		EntityManager manager = new JPAUtil().getEntityManger();
 		
-		GenericDAO<Conta> dao = new GenericDAO<Conta>(manager);
+		GenericDAO<Conta> dao = new GenericDAO<Conta>(manager, Conta.class);
 		
 		manager.getTransaction().begin();
 		Conta conta = dao.busca(2);

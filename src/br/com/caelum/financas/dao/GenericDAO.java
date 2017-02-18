@@ -9,16 +9,17 @@ import javax.persistence.EntityManager;
 import br.com.caelum.financas.modelo.Conta;
 import net.jodah.typetools.TypeResolver;
 
-public class GenericDAO<Type> {
+public class GenericDAO<Type>{
 	
 	private EntityManager manager;
 	private Class objectClass;;
 
-	public GenericDAO(EntityManager manager)
+	public GenericDAO(EntityManager manager, Class entityClass)
 	{
 		this.manager = manager;
-		Class<?>[] typeArguments = TypeResolver.resolveRawArguments(GenericDAO.class, getClass());
-	    this.objectClass =  typeArguments[0];
+		//Class<?>[] typeArguments = TypeResolver.resolveRawArguments(GenericDAO.class, getClass());
+	    //this.objectClass =  typeArguments[0];
+		this.objectClass = entityClass;
 	}
 	
 	public void adiciona(Type persistentObject)
@@ -37,9 +38,9 @@ public class GenericDAO<Type> {
 		manager.remove(persistentObject);
 	}
 	
-	public Type busca(Object... ids)
+	public Type busca(Integer id)
 	{
-		return (Type) manager.find(objectClass, ids);
+		return (Type) manager.find(objectClass, id);
 	}
 	
 	public List<Type> lista()

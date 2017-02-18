@@ -16,8 +16,8 @@ public class TestaSalvaMovimentacaoComConta {
 		EntityManager manager = new JPAUtil().getEntityManger();
 		manager.getTransaction().begin();
 		
-		GenericDAO<Conta> contaDAO = new GenericDAO<Conta>(manager);
-		GenericDAO<Movimentacao> movimentacaoDAO = new GenericDAO<Movimentacao>(manager);
+		GenericDAO<Conta> contaDAO = new GenericDAO<Conta>(manager, Conta.class);
+		GenericDAO<Movimentacao> movimentacaoDAO = new GenericDAO<Movimentacao>(manager, Movimentacao.class);
 		
 		Conta conta = new Conta();
 		conta.setBanco("Itau");

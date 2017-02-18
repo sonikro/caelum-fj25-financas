@@ -9,7 +9,7 @@ import br.com.caelum.financas.util.JPAUtil;
 public class TesteListagemConta {
 	public static void main(String[] args) {
 		EntityManager manager = new JPAUtil().getEntityManger();
-		GenericDAO<Conta> dao = new GenericDAO<Conta>(manager);
+		GenericDAO<Conta> dao = new GenericDAO<Conta>(manager, Conta.class);
 		
 		System.out.println(dao.lista());
 		

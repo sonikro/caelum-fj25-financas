@@ -13,7 +13,7 @@ public class TesteInsereConta {
 		
 		EntityManager manager = new JPAUtil().getEntityManger();
 		
-		GenericDAO<Conta> dao = new GenericDAO<Conta>(manager);
+		GenericDAO<Conta> dao = new GenericDAO<Conta>(manager, Conta.class);
 		
 		
 		Conta conta = new Conta();

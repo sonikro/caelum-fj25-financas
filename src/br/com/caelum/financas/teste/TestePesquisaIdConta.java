@@ -9,7 +9,7 @@ import br.com.caelum.financas.util.JPAUtil;
 public class TestePesquisaIdConta {
 	public static void main(String[] args) {
 		EntityManager manager = new JPAUtil().getEntityManger();
-		GenericDAO<Conta> dao = new GenericDAO<Conta>(manager);
+		GenericDAO<Conta> dao = new GenericDAO<Conta>(manager, Conta.class);
 		
 		Conta conta = dao.busca(1);
 		System.out.println("Titular:"+conta.getTitular());

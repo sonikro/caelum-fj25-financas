@@ -10,7 +10,7 @@ public class TestaRemoveConta {
 	public static void main(String[] args) {
 		EntityManager manager = new JPAUtil().getEntityManger();
 		
-		GenericDAO<Conta> dao = new GenericDAO<Conta>(manager);
+		GenericDAO<Conta> dao = new GenericDAO<Conta>(manager, Conta.class);
 		
 		Conta conta = dao.busca(3);
 		

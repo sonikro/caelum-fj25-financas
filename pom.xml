@@ -37,5 +37,17 @@
   		<artifactId>typetools</artifactId>
   		<version>0.4.8</version>
   	</dependency>
+  	<!-- https://mvnrepository.com/artifact/javassist/javassist -->
+<dependency>
+    <groupId>javassist</groupId>
+    <artifactId>javassist</artifactId>
+    <version>3.12.1.GA</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/c3p0/c3p0 -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-c3p0</artifactId>
+	    <version>5.2.7.Final</version>
+	</dependency>
   </dependencies>
 </project>
